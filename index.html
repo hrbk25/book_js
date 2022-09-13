@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>テンプレート</title>
+<link href="../../_common/images/favicon.ico" rel="shortcut icon">
+<link href="https://fonts.googleapis.com/css?family=M+PLUS+1p:400,500" rel="stylesheet">
+<link href="../../_common/css/style.css" rel="stylesheet">
+</head>
+<body>
+<header>
+<div class="container">
+<h1>タイトル</h1>
+<h2>サブタイトル</h2>
+</div><!-- /.container -->
+</header>
+<main>
+<div class="container">
+<section>
+    <p id="choice">ここに日時を表示します</p>
+</section>
+</div><!-- /.container -->
+</main>
+<footer>
+<div class="container">
+<p>JavaScript Samples</p>
+</div><!-- /.container -->
+</footer>
+<script>
+    'usestrict';
+    // 2-3
+    //document.getElementById('choice').textContent = new Date();
+    //console.log(document.getElementById('choice').textContent);
+
+    // 2-4
+    //console.log(window.confirm('ゲームスタート！準備はいい？'));
+
+    // 3-1
+    /*
+    if(window.confirm('ゲームスタート！準備はいい？')){
+        console.log('ゲームを開始します。')
+    }else{
+        console.log('ゲームを終了します。')
+    }
+    */
+
+    // 3-2,3-3
+    /*
+    const answer = window.prompt('ヘルプを見ますか？');
+
+    if(answer ==='yes'){
+        window.alert('タップでジャンプ、障害物をよけます');
+    }else if(answer === 'no'){
+        window.alert('ゲーム起動中...');
+    }else{
+        window.alert('yesかnoでお答えください。');
+    }
+    */
+    /*
+    let answer = 'yes';
+    console.log(answer);
+    answer = 'no';
+    console.log(answer);
+    */
+
+    // 3-4
+    const number = Math.floor(Math.random() * 6);
+    const answer = parseInt(window.prompt('数当てゲーム。0~5の数字を入力してね。'));
+    let message;
+    if(answer === number){
+        message = 'あたり！';
+    }else if (answer < number){
+        message = '残念でした！もっと大きい';
+    }else if (answer > number){
+        message = '残念でした！もっと小さい';
+    }else{
+        message = '0~5の数字を入力してね。';
+    }
+    window.alert(message);
+</script>
+</body>
+</html>
