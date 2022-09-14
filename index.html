@@ -18,7 +18,9 @@
 <main>
 <div class="container">
 <section>
-    <p id="choice">ここに日時を表示します</p>
+    <p id ='output'></p>
+    <p id ='output1'></p>
+    <p id ='output2'></p>
 </section>
 </div><!-- /.container -->
 </main>
@@ -65,6 +67,7 @@
     */
 
     // 3-4
+    /*
     const number = Math.floor(Math.random() * 6);
     const answer = parseInt(window.prompt('数当てゲーム。0~5の数字を入力してね。'));
     let message;
@@ -78,6 +81,102 @@
         message = '0~5の数字を入力してね。';
     }
     window.alert(message);
+    */
+
+    // 3-5
+    /*
+    const hour = new Date().getHours();
+    console.log(hour);
+    if(hour >= 19 && hour < 21){
+        window.alert('お弁当30%OFF');
+    }else if (hour === 9 || hour === 15){
+        window.alert('お弁当1個買ったら1個おまけ！');
+    }else {
+        window.alert('お弁当いかがですか');
+    }
+    */
+
+    // 3-6
+    /*
+    let i = 1;
+    while(i <= 10){
+        console.log(i + '枚');
+        i += 1;
+    }
+    */
+
+    // 3-7
+    /*
+    let hp = 100;
+    let count = 0;
+    window.alert('ゲームスタート');
+
+    // constは、定義した｛｝内であれば、書き換えることはOK！
+    while ( hp > 0){
+        const attack = Math.floor(Math.random()*30) + 1;
+        console.log('モンスターに'+ attack +'のダメージ！');
+        hp -= attack;
+        count += 1;
+        if(hp > 0){
+            console.log('残りの体力は'+ hp +'だ！')
+        }else{
+            console.log('よし！残りの体力は0だ！');
+        }
+        
+    }
+    console.log(count + '回でモンスターを倒したぞ！');
+    */
+
+    // 3-8
+    /*
+    function total(price){
+        const tax = 0.1;
+        return price + price *tax;
+    }
+    console.log('コーヒーメーカーの値段は' + total(300) + '円(税込)です。');
+
+    document.getElementById('output').textContent = 'コーヒーメーカーの値段は' + total(300) + '円(税込)です。';
+    document.getElementById('output1').textContent = 'コーヒーメーカーの値段は' + total(10000) + '円(税込)です。';
+    document.getElementById('output2').textContent = 'コーヒーメーカーの値段は' + total(2400) + '円(税込)です。';
+    */
+
+    // 3-9
+    /*
+    let i = 1;
+    
+    while(i <= 30){
+
+        if (i % 3 === 0 && i % 5 === 0){
+            console.log('FizzBuzz');
+        }else if (i % 3 === 0){
+            console.log('Fizz');
+        }else if(i % 5 === 0) {
+            console.log('Buzz');
+        }else{
+            console.log(i);
+        }
+        i += 1;
+    }
+    */
+    
+    function fizzBuzz(i){
+        if (i % 3 === 0 && i % 5 === 0){
+            return 'FizzBuzz';
+        }else if (i % 3 === 0){
+            return 'Fizz';
+        }else if(i % 5 === 0) {
+            return 'Buzz';
+        }else{
+            return i;
+        }
+    }
+    
+    let j = 1;
+    while(j <= 30){
+        console.log(fizzBuzz(j));
+        j++;
+    }
+
 </script>
 </body>
 </html>
