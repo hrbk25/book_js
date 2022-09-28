@@ -55,9 +55,29 @@
     -->
 
     <!-- 4-3 -->
+    <!-- 
     <p>円周率は<span id="pi"></span>です。</p>
     <p>普通に切り捨てると<span id="floor"></span>です。</p>
     <p>少数第2位で切り捨てると<span id="output"></span>です。</p>
+     -->
+
+    <!-- 5-1 -->
+    <!-- <p>いまから<span id = "timer"></span>以内に注文すると50％オフ！</p> -->
+    <!-- 
+    <h2><span>知ってました？</span><br>
+    2025年大阪万博開催まで</h2>
+    <p class = "timer" style="font-size: 26px; font-weight:bold;">あと<span id="day"></span>日<span id="hour"></span>時<span id="min"></span>分<span id="sec"></span>秒</p>
+    -->
+
+    <!-- 5-2 -->
+    <form id="form">
+        <select name="select">
+            <option value="index.html">日本語</option>
+            <option value="index-en.html">English</option>
+            <option value="index-zh.html">中文</option>
+        </select>
+    </form>
+    <h2>日本語ページ</h2>
 
 </section>
 </div><!-- /.container -->
@@ -67,7 +87,7 @@
 <p>JavaScript Samples</p>
 </div><!-- /.container -->
 </footer>
-<script>
+<script src="script.js">
     'usestrict';
     // 2-3
     //document.getElementById('choice').textContent = new Date();
@@ -279,6 +299,7 @@
     */
 
     // 4-3
+    /*
     document.getElementById('pi').textContent = Math.PI;
     document.getElementById('floor').textContent = Math.floor(Math.PI);
 
@@ -288,6 +309,56 @@
     }
 
     document.getElementById('output').textContent = point(Math.PI, 2);
+    */
+
+    // 5-1
+    /*
+    function countdown(due){
+        const now = new Date();
+
+        const rest = due.getTime() - now.getTime();
+        const sec = Math.floor(rest / 1000) % 60;
+        const min = Math.floor(rest / 1000 / 60) % 60;
+        const hours = Math.floor(rest / 1000 / 60 / 60) % 24;
+        const days = Math.floor(rest / 1000 / 60 / 60 /24); 
+        const count = [days, hours, min, sec];
+
+        return count;
+    }
+
+    let goal = new Date(2025, 4, 3);
+    
+    goal.setHours(23);
+    goal.setMinutes(59);
+    goal.setSeconds(59);
+    
+    
+    console.log(countdown(goal));
+
+    function recalc(){
+    const counter = countdown(goal);
+    /*
+    const time = `${counter[1]}時間${counter[2]}分${counter[3]}秒`;
+    document.getElementById('timer').textContent = time;
+    
+    document.getElementById('day').textContent = counter[0];
+    document.getElementById('hour').textContent = counter[1];
+    document.getElementById('min').textContent = String(counter[2]).padStart(2, '0');
+    document.getElementById('sec').textContent = String(counter[3]).padStart(2, '0');
+    refresh();
+    }
+
+    function refresh(){
+        setTimeout(recalc, 1000);
+    }
+
+    recalc();
+    */
+
+    // 5-2
+    document.getElementById('form').select.onchange = function(){
+        location.href = document.getElementById('form').select.value;
+    }
 
 </script>
 </body>
