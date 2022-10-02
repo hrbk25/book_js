@@ -82,6 +82,18 @@
     </form>
     <h2>日本語ページ</h2>
      -->
+    <!-- 5-4 -->
+     <div class="center">
+        <div>
+            <img src="step1/img1.jpg" id="bigimg">
+        </div>
+        <ul>
+            <li><img src="step1/thumb-img1.jpg" class="thumb" data-image="step1/img1.jpg"></li>
+            <li><img src="step1/thumb-img2.jpg" class="thumb" data-image="step1/img2.jpg"></li>
+            <li><img src="step1/thumb-img3.jpg" class="thumb" data-image="step1/img3.jpg"></li>
+            <li><img src="step1/thumb-img4.jpg" class="thumb" data-image="step1/img4.jpg"></li>
+        </ul>
+     </div>
 
 </section>
 </div><!-- /.container -->
@@ -91,12 +103,39 @@
 <p>JavaScript Samples</p>
 </div><!-- /.container -->
 </footer>
+
+<style>
+    section img{
+        max-width: 100%;
+    }
+    .center{
+        margin: 0 auto 0 auto;
+        max-width: 90%;
+        width: 500px;
+    }
+    ul{
+        display: flex;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+    li{
+        flex: 1 1 auto;
+        margin-right: 8px;
+    }
+    li:last-of-type{
+        margin-right: 0;
+    }
+
+
+</style>
 <!-- 5-3 -->
+<!-- 
 <div id="privacy-panel">
     <p>当サイトではユーザーエクスペリエンス向上のためクッキーを使用しています。また、匿名でアクセス状況のデータを収集しています。詳しい情報は当サイトのプライバシーポリシーをご覧ください。</p>
     <button id="agreebtn"></button>
 </div>
-
+ -->
 <script src="../../_common/scripts/js.cookie.js"></script>
 <script>
     'usestrict';
@@ -385,15 +424,29 @@
 
     // 5-3
 
+    /*
     const agree = Cookies.get('cookie-agree');
+    const panel = document.getElementById('privacy-panel');
     if(agree === 'yes'){
-        console.log('クッキーを確認しました');
+        // console.log('クッキーを確認しました');
+        document.body.removeChild(panel);
     }else{
-        console.log('クッキーを確認できません');
+        // console.log('クッキーを確認できません');
         document.getElementById('agreebtn').onclick = function(){
             Cookies.set('cookie-agree','yes', {expires: 7});
+            document.body.removeChild(panel);
         }
     }
+    */
+    // 5-4
+    const thumbs = document.querySelectorAll('.thumb');
+    // console.log(thumbs);
+    thumbs.forEach(function(item, index){
+        item.onclick = function(){
+            document.getElementById('bigimg').src = this.dataset.image;
+            console.log(this.dataset.image);
+        }
+    });
 
 </script>
 </body>
