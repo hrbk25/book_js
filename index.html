@@ -9,117 +9,197 @@
 <link href="../../_common/css/style.css" rel="stylesheet">
 <!-- 5-3から↓ -->
 <link rel="stylesheet" href="panel.css">
+<!-- 6-2から↓ -->
+<link rel="stylesheet" href="../book_js/6-2/CSS/special.css">
+
 </head>
 <body>
-<header>
-<div class="container">
-<h1>タイトル</h1>
-<h2>サブタイトル</h2>
-</div><!-- /.container -->
-</header>
-<main>
-<div class="container">
-<section>
-    <!-- <
-    <p id ='output'></p>
-    <p id ='output1'></p>
-    <p id ='output2'></p>
-     
-    <h1>やることリスト</h1>
-    <ul id="list">
-
-    </ul>
-    -->
-
-    <!-- 3-11 -->
-    <!--  
-    <table>
-        <tr >
-            <td style="border:1px solid #000 ;" id="title"></td>
-            <td style="border:1px solid #000 ;" id="price"></td>
-            <td style="border:1px solid #000 ;" id="stock"></td>
-        </tr>
-    </table>
-    -->
-
-    <!-- 4-1 -->
-    <!-- 
-    <form action="#" id="form">
-        <input type="text" name="word">
-        <input type="submit" value="検索">
-    </form>
-    <p id="output"></p>
-     -->
-
-    <!-- 4-2 -->
-    <!-- 
-    <p>最終日アクセス日時: <span id="time"></span></p>
-    -->
-
-    <!-- 4-3 -->
-    <!-- 
-    <p>円周率は<span id="pi"></span>です。</p>
-    <p>普通に切り捨てると<span id="floor"></span>です。</p>
-    <p>少数第2位で切り捨てると<span id="output"></span>です。</p>
-     -->
-
-    <!-- 5-1 -->
-    <!-- <p>いまから<span id = "timer"></span>以内に注文すると50％オフ！</p> -->
-    <!-- 
-    <h2><span>知ってました？</span><br>
-    2025年大阪万博開催まで</h2>
-    <p class = "timer" style="font-size: 26px; font-weight:bold;">あと<span id="day"></span>日<span id="hour"></span>時<span id="min"></span>分<span id="sec"></span>秒</p>
-    -->
-
-    <!-- 5-2 -->
-    <!-- 
-    <form id="form">
-        <select name="select">
-            <option value="index.html">日本語</option>
-            <option value="index-en.html">English</option>
-            <option value="index-zh.html">中文</option>
-        </select>
-    </form>
-    <h2>日本語ページ</h2>
-     -->
-    <!-- 5-4 -->
-    <!-- 
-     <div class="center">
-        <div>
-            <img src="step1/img1.jpg" id="bigimg">
+<div id="wrapper">
+    <header>
+        <!-- 
+        <div class="container">
+        <h1>タイトル</h1>
+        <h2>サブタイトル</h2>
         </div>
-        <ul>
-            <li><img src="step1/thumb-img1.jpg" class="thumb" data-image="step1/img1.jpg"></li>
-            <li><img src="step1/thumb-img2.jpg" class="thumb" data-image="step1/img2.jpg"></li>
-            <li><img src="step1/thumb-img3.jpg" class="thumb" data-image="step1/img3.jpg"></li>
-            <li><img src="step1/thumb-img4.jpg" class="thumb" data-image="step1/img4.jpg"></li>
+        -->
+        <!-- 6-2↓ -->
+        <div class="container">
+            <div class="title-block">
+                <h1>ドロワーナビゲーション</h1>
+                <h2>ヘッダーにボタンを設置する</h2>
+            </div>
+            <div class="hamburger" id="open_nav">
+                <img src="6-2/hamburger.png" alt="">
+            </div><!-- container -->
+        </div>
+    </header>
+    <main>
+    <!-- <div class="container"> -->
+    <section>
+        <!-- <
+        <p id ='output'></p>
+        <p id ='output1'></p>
+        <p id ='output2'></p>
+         
+        <h1>やることリスト</h1>
+        <ul id="list">
+    
         </ul>
-     </div>
-      -->
-
-    <!-- 5-5 -->
-    <div class="slide">
-        <div class="image_box">
-            <img id="main_image" src="images/image1.jpg">
-        </div>
-        <div class="toolbar">
-            <div class="nav">
-                <div id="prev"></div>
-                <div id="page"></div>
-                <div id="next"></div>
+        -->
+    
+        <!-- 3-11 -->
+        <!--  
+        <table>
+            <tr >
+                <td style="border:1px solid #000 ;" id="title"></td>
+                <td style="border:1px solid #000 ;" id="price"></td>
+                <td style="border:1px solid #000 ;" id="stock"></td>
+            </tr>
+        </table>
+        -->
+    
+        <!-- 4-1 -->
+        <!-- 
+        <form action="#" id="form">
+            <input type="text" name="word">
+            <input type="submit" value="検索">
+        </form>
+        <p id="output"></p>
+         -->
+    
+        <!-- 4-2 -->
+        <!-- 
+        <p>最終日アクセス日時: <span id="time"></span></p>
+        -->
+    
+        <!-- 4-3 -->
+        <!-- 
+        <p>円周率は<span id="pi"></span>です。</p>
+        <p>普通に切り捨てると<span id="floor"></span>です。</p>
+        <p>少数第2位で切り捨てると<span id="output"></span>です。</p>
+         -->
+    
+        <!-- 5-1 -->
+        <!-- <p>いまから<span id = "timer"></span>以内に注文すると50％オフ！</p> -->
+        <!-- 
+        <h2><span>知ってました？</span><br>
+        2025年大阪万博開催まで</h2>
+        <p class = "timer" style="font-size: 26px; font-weight:bold;">あと<span id="day"></span>日<span id="hour"></span>時<span id="min"></span>分<span id="sec"></span>秒</p>
+        -->
+    
+        <!-- 5-2 -->
+        <!-- 
+        <form id="form">
+            <select name="select">
+                <option value="index.html">日本語</option>
+                <option value="index-en.html">English</option>
+                <option value="index-zh.html">中文</option>
+            </select>
+        </form>
+        <h2>日本語ページ</h2>
+         -->
+        <!-- 5-4 -->
+        <!-- 
+         <div class="center">
+            <div>
+                <img src="step1/img1.jpg" id="bigimg">
+            </div>
+            <ul>
+                <li><img src="step1/thumb-img1.jpg" class="thumb" data-image="step1/img1.jpg"></li>
+                <li><img src="step1/thumb-img2.jpg" class="thumb" data-image="step1/img2.jpg"></li>
+                <li><img src="step1/thumb-img3.jpg" class="thumb" data-image="step1/img3.jpg"></li>
+                <li><img src="step1/thumb-img4.jpg" class="thumb" data-image="step1/img4.jpg"></li>
+            </ul>
+         </div>
+          -->
+    
+        <!-- 5-5 -->
+        <!-- 
+        <div class="slide">
+            <div class="image_box">
+                <img id="main_image" src="images/image1.jpg">
+            </div>
+            <div class="toolbar">
+                <div class="nav">
+                    <div id="prev"></div>
+                    <div id="page"></div>
+                    <div id="next"></div>
+                </div>
             </div>
         </div>
-    </div>
-
-
-</section>
-</div><!-- /.container -->
-</main>
-<footer>
-<div class="container">
-<p>JavaScript Samples</p>
-</div><!-- /.container -->
-</footer>
+         -->
+         
+        <!-- 6-1 -->
+        <!-- 
+        <div class="sidebar">
+            <h2>サポートページ</h2>
+            <div class="submenu">
+                <h3>1. 初めて使うとき</h3>
+                <ul class="hidden">
+                    <li><a href="">- 概要</a></li>
+                    <li><a href="">- インストールをする</a></li>
+                    <li><a href="">- アカウントを登録する</a></li>
+                    <li><a href="">- アンインストールする</a></li>                
+                </ul>
+            </div>
+            <div class="submenu">
+                <h3>2. 基本的な使い方</h3>
+                <ul class="hidden">
+                    <li><a href="">- 基本的な操作方法</a></li>
+                    <li><a href="">- 元の状態に復元する</a></li>
+                    <li><a href="">- 機能拡張プラグインを追加する</a></li>                
+                </ul>
+            </div>
+        </div>
+         -->
+    
+        <!-- 6-2 -->
+         <div class="key">
+            <img src="6-2/key.jpg" alt="">
+         </div>
+         <div class="content">
+            <h1>一人旅でリフレッシュ</h1>
+            <p>今月の特集は「一人旅」<br>
+            週末に行ける小さな旅行から人生を見つめる長旅まで、<br>
+            充実のおひとり様プラン、紹介します。</p>
+         </div>
+         <div class="archive">
+            <h3>特集アーカイブ</h3>
+            <div class="archive-box">
+                <figure>
+                    <img src="6-2/thumb1.jpg" alt="">
+                    <figcaption>レトロな街の、楽しみ方</figcaption>
+                </figure>
+                <figure>
+                    <img src="6-2/thumb2.jpg" alt="">
+                    <figcaption>建築物を巡る旅</figcaption>
+                </figure>
+            </div>
+         </div>
+    </section>
+    </div><!-- /.container -->
+    </main>
+    <footer>
+    
+    <!--  
+    <div class="container">
+    <p>JavaScript Samples</p>
+    </div> /.container -->
+    
+    </footer>
+</div>
+<!-- 6-2↓ -->
+ 
+<nav id="nav"> </nav>
+    <div class="logo"><img src="6-2/logo.svg" alt=""></div>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">今月の特集</a></li>
+        <li><a href="#">ホテルの検索</a></li>
+        <li><a href="#">カフェの検索</a></li>
+        <li><a href="#">お問い合わせ</a></li>
+    </ul>
+</nav>
 
 <style>
     /* 5-4 */
@@ -145,9 +225,10 @@
     li:last-of-type{
         margin-right: 0;
     }
-     */
+    */
 
-    /* 5-5 */
+    /* 5-5  */
+    /* 
     .slide{
         margin: 0 auto;
         border: 1px solid black;
@@ -182,6 +263,31 @@
         height: 16px;
         background: url(images/arrow-right.svg) no-repeat;
     }
+    */
+
+    /* 6-1 */
+    /* 
+    .submenu h3{
+        margin: 0 0 1em 0;
+        font-size: 16px;
+        cursor: pointer;
+        color: #5e78c1;
+    }
+    .submenu h3:hover{
+        color: #b04188;
+        text-decoration: underline;
+    }
+    .submenu ul {
+        margin: 0 0 1em 0;
+        list-style-type: none;
+        font-size: 14px;
+    }
+    .hidden{
+        display: none;
+    }
+     */
+    
+
 </style>
 
 
@@ -192,7 +298,9 @@
     <button id="agreebtn"></button>
 </div>
  -->
-<script src="../../_common/scripts/js.cookie.js"></script>
+<!-- <script src="../../_common/scripts/js.cookie.js"></script> -->
+<!-- 6-1↓ -->
+<script src="../book_js/_common/scripts/jquery-3.4.1.min.js"></script>
 <script>
     'usestrict';
     // 2-3
@@ -507,6 +615,7 @@
     */
 
     // 5-5
+    /*
     const images = ['images/image1.jpg', 'images/image2.jpg', 'images/image3.jpg', 'images/image4.jpg', 'images/image5.jpg'];
     images.forEach(function(item, index){
         preloadImage(item);
@@ -539,9 +648,24 @@
     document.getElementById('next').onclick = function(){
         changeImage(1);
     };
+    */
 
+    // 6-1
+    /*
+    $(document).ready(function(){
+        $('.submenu h3').on('click', function(){
+            $(this).next().toggleClass('hidden');
+        });
+    });
+    */
     
+    // 6-2
 
+    $(document).ready(function(){
+        $('#open_nav').on('click', function(){
+            $('#wrapper, #nav').toggleClass('show');
+        });
+    });
 
 </script>
 </body>
