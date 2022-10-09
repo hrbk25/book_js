@@ -10,7 +10,7 @@
 <!-- 5-3から↓ -->
 <link rel="stylesheet" href="panel.css">
 <!-- 6-2から↓ -->
-<link rel="stylesheet" href="../book_js/6-2/CSS/special.css">
+<!-- <link rel="stylesheet" href="../book_js/6-2/CSS/special.css"> -->
 
 </head>
 <body>
@@ -23,14 +23,17 @@
         </div>
         -->
         <!-- 6-2↓ -->
+        <!--  -->
         <div class="container">
+            <!-- 
             <div class="title-block">
                 <h1>ドロワーナビゲーション</h1>
                 <h2>ヘッダーにボタンを設置する</h2>
             </div>
             <div class="hamburger" id="open_nav">
                 <img src="6-2/hamburger.png" alt="">
-            </div><!-- container -->
+            </div>  -->
+            <!-- container -->
         </div>
     </header>
     <main>
@@ -154,6 +157,7 @@
          -->
     
         <!-- 6-2 -->
+        <!-- 
          <div class="key">
             <img src="6-2/key.jpg" alt="">
          </div>
@@ -175,7 +179,37 @@
                     <figcaption>建築物を巡る旅</figcaption>
                 </figure>
             </div>
-         </div>
+        </div>
+         -->
+
+        <!-- 6-3 -->
+        <!-- 
+         <ul class="list">
+            <li class="seminar" id="js">
+                <h2>JavaScript勉強会</h2>
+                <p class="check">空き席状況を確認</p>
+            </li>
+            <li class="seminar" id="security">
+                <h2>セキュリティ対策講座</h2>
+                <p class="check">空き席状況を確認</p>
+            </li>
+            <li class="seminar" id="aiux">
+                <h2>AIを利用したUX設計</h2>
+                <p class="check">空き席状況を確認</p>
+            </li>
+         </ul>
+          -->
+
+        <!-- 7-1 -->
+        <!-- 
+        <p>あなたはいま</p>
+        <p id="loc" class="position"></p>
+        <p>の場所にいます。ちなみに制度は半径<span id="accuracy" class="position"></span>mです。</p>
+        --> 
+
+        <!-- 7-2 --> 
+
+
     </section>
     </div><!-- /.container -->
     </main>
@@ -189,7 +223,7 @@
     </footer>
 </div>
 <!-- 6-2↓ -->
- 
+<!-- 
 <nav id="nav"> </nav>
     <div class="logo"><img src="6-2/logo.svg" alt=""></div>
     <ul>
@@ -200,6 +234,7 @@
         <li><a href="#">お問い合わせ</a></li>
     </ul>
 </nav>
+-->
 
 <style>
     /* 5-4 */
@@ -287,6 +322,42 @@
     }
      */
     
+     /* 6‐3 */
+     /* 
+    .list {
+        overflow: hidden;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+    .list h2 {
+        margin: 0 0 2em 0;
+        font-size: 16px;
+        text-align: center;
+    }
+    .seminar {
+        float: left;
+        margin: 10px 10px 10px 0;
+        border: 1px solid #23628f;
+        padding: 4px;
+        width: 25%;
+    }
+    .check {
+        margin: 0;
+        padding: 8px;
+        font-size: 12px;
+        color: #fff;
+        background-color: #23628f;
+        text-align: center;
+        cursor: pointer;
+    }
+    .red {
+        background-color: #e33a6d;
+    }
+    .green {
+        background-color: #7bc52e;
+    }
+     */
 
 </style>
 
@@ -301,8 +372,9 @@
 <!-- <script src="../../_common/scripts/js.cookie.js"></script> -->
 <!-- 6-1↓ -->
 <script src="../book_js/_common/scripts/jquery-3.4.1.min.js"></script>
+<script src="../book_js/script.js"></script>
 <script>
-    'usestrict';
+    'use strict';
     // 2-3
     //document.getElementById('choice').textContent = new Date();
     //console.log(document.getElementById('choice').textContent);
@@ -660,12 +732,62 @@
     */
     
     // 6-2
-
+    /*
     $(document).ready(function(){
         $('#open_nav').on('click', function(){
             $('#wrapper, #nav').toggleClass('show');
         });
     });
+    */
+    
+    // 6-3
+    /*
+    $(document).ready(function(){
+        // ファイル読み込み
+        $.ajax({url:'data.json', dataType:'json'})
+        .done(function(data){
+            // console.log(data);
+            data.forEach(function(item, index){
+                // console.log(item);
+                if(item.crowded === 'yes'){
+                    const idName = '#' + item.id;
+                    $(idName).find('.check').addClass('crowded');
+                }
+            });
+        })
+        .fail(function(){
+            window.alert('読み込みエラー');
+        });
+
+        // クリックされたら空き状況を表示
+        $('check').on('click', function(){
+            if($(this).hasClass('crowded')){
+                $(this).text('残席わずか').addClass('red');
+            }else{
+                $(this).text('お席あります').addClass('green');
+            }
+        });
+    });
+    */
+
+    // 7-1
+    /*
+    function success(pos) {
+        // console.log(pos);
+        const lat = pos.coords.latitude;
+        const lng = pos.coords.longitude;
+        const accuracy = pos.coords.accuracy;
+
+        $('#loc').text(`緯度：${lat}' '経度：${lng}`);
+        $('#accuracy').text(accuracy);
+    }
+
+    function fail(error) {
+        alert('位置情報の取得に失敗しました。エラーコード：' + error.code);
+    }
+
+    navigator.geolocation.getCurrentPosition(success, fail);
+    */
 
 </script>
 </body>
